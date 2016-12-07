@@ -13,7 +13,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Filters
             var requestUri = actionContext.Request.RequestUri.LocalPath;
             var arguments = JsonConvert.SerializeObject(actionContext.ActionArguments);
 
-            ApiLogger.Current.Info($"{httpMethod} / {requestUri} / ${arguments}");
+            ApiLogger.Current.Info($"{httpMethod} / {requestUri} / {arguments}");
         }
 
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
@@ -22,7 +22,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Filters
             var requestUri = actionExecutedContext.Request.RequestUri.LocalPath;
             var result = actionExecutedContext.Response.IsSuccessStatusCode ? "OK" : "KO";
 
-            ApiLogger.Current.Info($"{httpMethod} / {requestUri} > ${result}");
+            ApiLogger.Current.Info($"{httpMethod} / {requestUri} > {result}");
         }
     }
 }
