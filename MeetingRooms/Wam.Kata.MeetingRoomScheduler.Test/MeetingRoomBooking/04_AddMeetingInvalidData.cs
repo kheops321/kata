@@ -20,7 +20,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Test.MeetingRoomBooking
             var fakeMeeting = new Meeting { StartsAt = 10, EndsAt = -1, MeetingDate = DateTime.Now, User = "Walid" };
 
             _response = Context.Server.HttpClient.PostAsync(
-                "/rooms/room2/meetings",
+                "/rooms/v1/room2/meetings",
                 new ObjectContent(typeof(Meeting), fakeMeeting, new JsonMediaTypeFormatter())).Result;
         }
 

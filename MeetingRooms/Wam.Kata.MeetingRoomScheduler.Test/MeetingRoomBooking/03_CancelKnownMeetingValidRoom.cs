@@ -26,7 +26,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Test.MeetingRoomBooking
         public void WhenITryToDeleteAnExistingMeeting(string meetingCode)
         {
             _response = Context.Server.HttpClient
-                .DeleteAsync($"/rooms/room5/meetings/{meetingCode}").Result;
+                .DeleteAsync($"/rooms/v1/room5/meetings/{meetingCode}").Result;
         }
 
         [Then(@"we must obtain an http OK result")]

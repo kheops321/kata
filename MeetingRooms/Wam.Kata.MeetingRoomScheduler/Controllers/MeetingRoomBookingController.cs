@@ -13,7 +13,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Controllers
     /// <summary>
     /// Manage rooms
     /// </summary>
-    [RoutePrefix("rooms")]
+    [RoutePrefix("rooms/v1")]
     public class MeetingRoomBookingController : ApiController
     {
         private readonly IMeetingRepository _meetingRepository;

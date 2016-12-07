@@ -3,7 +3,6 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using FluentAssertions;
-using Newtonsoft.Json;
 using TechTalk.SpecFlow;
 using Wam.Kata.MeetingRoomScheduler.Middleware.Entities;
 using Wam.Kata.MeetingRoomScheduler.Test.Core;
@@ -21,7 +20,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Test.MeetingRoomBooking
             var fakeMeeting = new Meeting {StartsAt = 5, EndsAt = 10, MeetingDate = DateTime.Now, User = "Walid"};
 
             _response = Context.Server.HttpClient.PostAsync(
-                "/rooms/UNKNOWN/meetings",
+                "/rooms/v1/UNKNOWN/meetings",
                 new ObjectContent(typeof(Meeting), fakeMeeting, new JsonMediaTypeFormatter())).Result;
         }
 

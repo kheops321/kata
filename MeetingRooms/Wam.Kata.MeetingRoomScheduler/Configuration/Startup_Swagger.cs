@@ -11,7 +11,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Configuration
             configuration
             .EnableSwagger(c =>
             {
-                c.SingleApiVersion("v2", "Meeting room scheduler apis");
+                c.SingleApiVersion("v1", "Meeting room scheduler apis");
                 c.IncludeXmlComments(
                     $@"{AppDomain.CurrentDomain.BaseDirectory}\bin\Wam.Kata.MeetingRoomScheduler.XML");
 

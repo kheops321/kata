@@ -15,7 +15,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Test.MeetingRoomBooking
         public void WhenITryToDeleteAMeetingUsingAnUnknownRoom()
         {
             _response = Context.Server.HttpClient
-                .DeleteAsync("/rooms/unknown/meetings/d82bb75b-246c-41b4-a2e5-d873f7accdfb").Result;
+                .DeleteAsync("/rooms/v1/unknown/meetings/d82bb75b-246c-41b4-a2e5-d873f7accdfb").Result;
 
         }
 

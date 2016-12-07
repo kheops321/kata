@@ -18,7 +18,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Test.MeetingRoomBooking
         [When(@"I ask for the meeting room list")]
         public void WhenIAskForTheMeetingRoomList()
         {
-            _response = Context.Server.HttpClient.GetAsync("/rooms").Result;
+            _response = Context.Server.HttpClient.GetAsync("/rooms/v1").Result;
 
             _rooms = JsonConvert.DeserializeObject<Room[]>(_response.Content.ReadAsStringAsync().Result);
         }

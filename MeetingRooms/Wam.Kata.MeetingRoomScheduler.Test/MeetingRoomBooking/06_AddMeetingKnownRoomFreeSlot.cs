@@ -42,7 +42,7 @@ namespace Wam.Kata.MeetingRoomScheduler.Test.MeetingRoomBooking
             var fakeMeeting = new Meeting { Room = _room, StartsAt = p0, EndsAt = p1, MeetingDate = DateTime.Now.Date, User = "Walid" };
 
             _response = Context.Server.HttpClient.PostAsync(
-                "/rooms/room2/meetings",
+                "/rooms/v1/room2/meetings",
                 new ObjectContent(typeof(Meeting), fakeMeeting, new JsonMediaTypeFormatter())).Result;
 
             _meetingCode = _response.Content.ReadAsStringAsync().Result.Replace("\"", "");
